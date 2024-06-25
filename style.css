@@ -1,0 +1,258 @@
+*{
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.heading{
+    color:red;
+    margin: 10px;
+    margin-left: 30px;
+}
+.cont1{
+    width:100%;
+    height:60px;
+    background:rgb(15, 20, 31);
+    border:1px solid;
+    position:sticky;
+    left:0;
+    top:0;
+    right:0;
+    
+    
+
+}
+
+.forms1{
+    width: 100%;
+    height: 450px;
+    background: url('/static/images/backgroundimage.jpg') no-repeat center center;
+    padding-top: 150px;
+    
+
+}
+.pred{
+    margin: 15px;
+    text-align: center;
+    font-size: 30px;
+    color:yellow;
+    
+}
+.cont3{
+    width:100%;
+    height:400px;
+    background-color: black;
+    padding-top:100px;
+    
+}
+.cont4{
+    width:32%;
+    height:250px;
+    background: url('/static/images/umback.jpg') no-repeat center center;
+    margin: 10px;
+    float: right;
+    border-radius: 20px;
+    
+    border:1px solid white;
+}
+.cont5{
+    width:32%;
+    height:250px;
+    
+    float: right;
+    margin: 10px;
+    border-radius: 20px;
+    background: url('/static/images/scorpioback.jpg') no-repeat center center;
+    border:1px solid white;
+}
+.cont6{
+    width:31%;
+    height:250px;
+    
+    margin: 10px;
+    border-radius: 20px;
+    border:1px solid white;
+    background: url('/static/images/orionback.jpg') no-repeat center center;
+    
+    
+}
+.cont2{
+    width: 500px;
+    height:60px;
+    float: right;
+    
+   
+}
+.headul{
+    list-style: none;
+    margin-top: -45px;
+    
+    
+}
+.headlist{
+    display: inline-block;
+    margin:0 20px;
+}
+.ahead{
+    text-decoration: none;
+    color:white;
+    font-size: 22px;
+}
+.ahead:hover{
+    color:red;
+}
+footer {
+    background-color: black;
+    color:white;
+    padding-top:13px ;
+    padding-bottom: 5px;
+    text-align: center;
+    position: absolute;
+    width:100%;
+    
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+    font-size: 20px;
+}
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.formcont{
+    background: url('/static/images/formback.jpg') no-repeat center center;
+}
+.container1 {
+
+    height:500px;
+    padding: 100px;
+    text-align: center;
+    
+}
+
+#lab:hover{
+    background-color:black;
+    color:white;
+}
+.um:hover{
+    color:white;
+}
+.foothov:hover{
+    color:red;
+}
+.cont7{
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+}
+.formbut:hover{
+    background-color:black ;
+    color:white;
+}
+.formres{
+    color:white;
+    padding: 5px;
+    font-size: 25px;
+}
+.texts{
+    font-size: 23px;
+    color:red;
+    text-align: left;
+    padding-left: 60px;
+    border-right: 5px solid;
+    overflow: hidden;
+    letter-spacing: 3px;
+    width: 81%;
+    white-space: nowrap;
+    animation:
+        typing 3s steps(40),
+        cursor .3s step-end infinite alternate;
+    
+}
+
+
+@keyframes cursor{
+    50% { border-color: transparent;}
+}
+@keyframes typing {
+    from { width:0 }
+}
+.innercont{
+    height:200px;
+    background: url('/static/images/kid.jpg') no-repeat center ;
+    background-size: contain;
+    width:25%;
+    margin: 30px;
+    
+    
+    
+}
+.desc{
+    
+    height:200px;
+    width:75%;
+    
+    margin: 25px;
+    
+
+    
+}
+.text1{
+    font-size: 21px;
+    padding: 10px;
+    color:black;
+    font-style: italic bold;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+#upload-form {
+    margin-top: 20px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.image-box {
+    width: 400px;
+    margin: 15px;
+}
+.image-box img {
+    max-width: 100%;
+    max-height: 400px;
+    margin-bottom: 10px;
+}
+.description {
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin: 10px;
+}
+.mains{
+    height:700px;
+    width:100%;
+    
+    background-color: red;
+}

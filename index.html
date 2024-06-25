@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star World</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    
+</head>
+<body>
+    <div class="cont1">
+        <h1 class="heading">Star World</h1>
+        <div class="cont2">
+                <ul class="headul">
+                    <li class="headlist"><a href="#" class="ahead">Home</a></li>
+                    <li class="headlist"><a href="#models" class="ahead">Model</a></li>
+                    <li class="headlist"><a href="#about" class="ahead">About</a></li>
+                    <li class="headlist"><a href="#contact" class="ahead">Contact</a></li>
+                </ul>
+        </div>
+    </div>
+    <div class="cont7">
+        <div class="innercont"></div>
+        <div class="desc">
+            <p class="text1"><b>H</b>ello <b>G</b>uys!!! welcome to the  <b style="color:red;font-size:25px;">Star World</b> . Here we are going to learn about the star constellations that appears on the sky. Basically there are 88 officially recognized star constellation.But Here we are going to focus on the three star constellaions which are <b>Orion,Ursa Major and Scorpio</b>... </p>
+            <p class="texts">So Guys!!Lets Jump to the World Of Stars and Explore them.... </p>
+            
+        </div>
+    </div>
+    <div class="mains" id="models">
+        
+        <form id="upload-form" enctype="multipart/form-data" class="container">
+            <label for="file"  style="font-size: 40px;padding: 20px;padding-top: 60px;">Upload an image:</label><br>
+            <input type="file" name="file" id="file" accept="image/*" required><br><br>
+            <button type="button" class="formbut" onclick="predict()">Predict</button>
+        </form>
+    
+        <div id="result" style="display: none;">
+            <div class="result">
+                <div class="image-box">
+                    <h3>Uploaded Image:</h3>
+                    <img id="uploaded-image" src="#" alt="Uploaded Image">
+                </div>
+                <div class="image-box">
+                    <h3>Example Image:</h3>
+                    <img id="example-image" src="#" alt="Example Image">
+                </div>
+                <div class="description">
+                    <h3>Predicted Constellation:</h3>
+                    <p id="predicted-class"></p>
+                    <h3>Description:</h3>
+                    <p id="description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cont3" id="about">
+        <div class="cont4">
+            <a href="https://www.space.com/ursa-major-constellation-great-bear" style="color:yellow"><h1 class="um" style="padding: 10px;text-align: center;">Ursa Major</h1></a>
+            <p style="color:white;font-size: 15px;margin: 10px;">Ursa Major, also known as the Great Bear, is the third-largest constellation in the sky and the largest constellation in the Northern Hemisphere.It includes the Big Dipper asterism and is one of the most recognizable collections of stars in the Northern Hemisphere.</p>
+        </div>
+        <div class="cont5">
+            <a href="https://www.space.com/16947-scorpius-constellation.html" style="color:yellow"><h1 class="um" style="padding: 10px;text-align: center;">Scorpio</h1></a>
+            <p style="color:white;font-size: 15px;margin: 10px;">Scorpius is an ancient constellation that pre-dates the Greeks; it is one of the 48 constellations identified by the Greek astronomer Ptolemy in the second century. Its old astronomical symbol is (♏︎). Visible at latitudes between +40° and −90°. Best visible at 21:00 (9 p.m.) during the month of July.</p>
+        </div>
+        <div class="cont6">
+            <a href="https://hubblesite.org/contents/media/images/2006/01/1836-Image.html?news=true#:~:text=Orion%2C%20one%20of%20the%20most,Beta%20Orionis)%20at%20lower%20right."style="color:yellow;" ><h1 class="um" style="padding: 10px;text-align: center;">Orion</h1></a>
+            <p style="color:white;font-size: 15px;margin: 10px;">Orion's seven brightest stars form a distinctive hourglass-shaped asterism, or pattern, in the night sky. Four stars—Rigel, Betelgeuse, Bellatrix, and Saiph—form a large roughly rectangular shape, at the center of which lies the three stars of Orion's Belt—Alnitak, Alnilam, and Mintaka.</p>
+        </div>
+    </div>
+    <div  id="contact" class="formcont">
+    <div  class="container1">
+        <center><h1 style="color:white;font-style: bold;">For Furthur Queries</h1></center><br>
+        <form name="submit-to-google-sheet">
+            <label for="name" style="font-size: 18px; padding: 5px;color:white;">Name:</label>
+            <input type="text" id="name" name="name" ><br><br>
+            <label for="email" style="font-size: 18px; padding: 5px;color:white;">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message" style="font-size: 20px; padding: 5px;color:white;">Message</label><br>
+            <textarea id="message" name="message" rows="15" cols="60" ></textarea><br><br>
+            <input type="submit" value="Submit" class="formbut"><br>
+            <span id="success" class="formres"></span>
+        </form>
+    </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="https://www.facebook.com" class="foothov">Facebook</a></li>
+            <li><a href="https://x.com/?lang=en" class="foothov">Twitter</a></li>
+            <li><a href="https://www.instagram.com/" class="foothov">Instagram</a></li>
+        </ul>
+    </footer>
+    <script>
+        function predict() {
+            var form = document.getElementById('upload-form');
+            var formData = new FormData(form);
+            
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display results
+                document.getElementById('uploaded-image').src = data.uploaded_image;
+                document.getElementById('example-image').src = data.example_image;
+                document.getElementById('predicted-class').textContent = data.predicted_class;
+                document.getElementById('description').textContent = data.description;
+
+                // Show the result section
+                document.getElementById('result').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx2jZZnGcovsnmUUoCpG4PI5evp_2WtJu3lqfBpLnZrUX5ksYBgKk327580imSRDUCBLQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const success=document.getElementById('success');
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            success.innerHTML="data successfully submitted";
+        })
+        .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
